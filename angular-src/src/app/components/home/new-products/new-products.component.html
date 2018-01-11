@@ -1,0 +1,19 @@
+<div class="products_wrap">
+    <div class="container">
+        <h2>Новые товары</h2>
+        <div class="products_list wrap-flex">
+            <div *ngFor="let product of products" class="product_item" (click)="onSelectProduct(product)">
+                <div class="product_item-img">
+                    <img src={{product.picture[0]}} alt={{product.name}}/>
+                </div>
+                <div class="product_item-name">
+                    {{product.name}}
+                </div>
+                <div class="product_item-price">
+                    {{product.price}} руб.
+                </div>
+                <div class="product-icon_new">new</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+.products_wrap {
+    padding-top: 14px;
+    position: relative;
+}
+
+.wrap-flex {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.product_item {
+    width: 32%;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.product_item:hover {
+    box-shadow: 2px 3px 7px rgba(0,0,0,0.12), -2px -3px 7px rgba(0,0,0,0.12);
+}
+
+.product_item-img {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px auto;
+    position: relative;
+}
+
+.product_item-img img {
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product_item-descr {
+    color: #000;
+    font-size: 20px;
+    height: 125px;
+    overflow: hidden;
+}
+
+.product_item-price {
+    font-weight: bold;
+    font-size: 23px;
+    color: #2bb9cd;
+}
+
+.products_sort {
+    margin-bottom: 25px;
+}
+
+.products_sort-title {
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.products_sort-btn {
+    display: inline-block;
+    vertical-align: top;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 10px;
+    background: #fff;
+    margin-right: 20px;
+    color: #2bb9cd;
+    border: 1px solid #2bb9cd;
+}
+
+.products_sort-btn:last-child {
+    margin-right: 0;
+}
+
+.products_sort-btn:hover,
+.isActive {
+    background: #2bb9cd;
+    border-color: #2bb9cd;
+    color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+    .product_item-descr {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1101px) {
+	.product_item {
+		margin-right: 2%;
+	}
+    .product_item:nth-of-type(3n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .product_item-name {
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 601px) {
+	.product_item {
+        width: 45%;
+		margin-right: 10%;
+	}
+    .product_item:nth-of-type(2n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .products_sort {
+        text-align: center;
+    }
+    .products_sort-title,
+    .products_sort-btn,
+    .products_sort-btn:last-child {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    .product_item {
+         width: 280px;
+         margin: 0 auto 30px auto;
+     }
+}
+

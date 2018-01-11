@@ -1,0 +1,30 @@
+<div class="wrap-flex">
+    <div class="form_wrap">
+        <div class="form_title">Логин</div>
+        <form #loginForm="ngForm" (submit)="onLoginSubmit(loginForm.value)">
+            <div class="form_input">
+                <input type="text" #usernameRef="ngModel" name="username" minlength="4" placeholder="Логин..." required ngModel autofocus>
+                <div *ngIf="usernameRef.errors && (usernameRef.dirty || usernameRef.touched)" class="error-message">
+                    <div [hidden]="!usernameRef.errors.required">
+                        Введите логин
+                    </div>
+                    <div [hidden]="!usernameRef.errors.minlength">
+                        Логин должен состоять минимум из 4 символов
+                    </div>
+                </div>
+            </div>
+            <div class="form_input">
+                <input type="password" #passwordRef="ngModel" name="password" minlength="6" placeholder="Пароль..." required ngModel>
+                <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" class="error-message">
+                    <div [hidden]="!passwordRef.errors.required">
+                        Введите пароль
+                    </div>
+                    <div [hidden]="!passwordRef.errors.minlength">
+                        Пароль должен состоять минимум из 6 символов
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="loginForm.invalid" class="btn-submit" type="submit">Вход</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="tabs">
+    <!--<div class="tabs_start" [ngClass]='{opened: !groups.length}'>
+        <img src="assets/img/banner-4.jpg" alt="">
+    </div>-->
+    <div class="tabs_content" [ngClass]='{opened: groups.length}'>
+        <h3>Выберите категорию:</h3>
+        <div class="container wrap-flex">
+            <div class="groups_wrap">
+                <ul class="groups_list">
+                    <li class="groups_list-item" [class.isActive]='group === selectedGroup' *ngFor="let group of groups" (click)="onSelectGroup(group)">
+                        {{group.title}}
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="categories_wrap">
+                <spinner-component [spinnerShow]="showLoader">
+                    <div class="spinner-2"></div>
+                </spinner-component>
+                <ul class="categories_list">
+                    <li class="categories_list-item" *ngFor="let category of categories" (click)="onSelectCategory(category)">
+                        <div class="category_photo">
+                            <img src={{category.photo}} alt={{category.title}}/>
+                        </div>
+                        <div class="category_title">{{category.title}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

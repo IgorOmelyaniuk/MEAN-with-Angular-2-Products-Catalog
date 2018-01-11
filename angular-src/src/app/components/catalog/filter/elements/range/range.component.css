@@ -1,0 +1,30 @@
+.form_group-title {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.form_range {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	line-height: 40px;
+}
+
+.form_input {
+	display: inline-block;
+	vertical-align: top;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #2bb9cd;
+	border-radius: 5px;
+	width: 70px;
+	text-align: center;
+	font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+	.form_group-title  {
+		font-size: 17px;
+	}
+} 

@@ -1,0 +1,34 @@
+<div class="search_block">
+    <div class="container">
+        <h3>Выберите категорию для поиска</h3>
+        <div class="search_field">
+            <div class="search_category-select">
+                <select [ngModel]="selectedCategory" (ngModelChange)="onSelectCategory($event)">
+                    <option *ngFor="let category of categories" [value]="category.path">{{category.title}}</option>
+                </select>
+            </div>
+            <div class="search_input" *ngIf="selectedCategory">
+                <input type="text" [(ngModel)]="searchString"  (keyup)="searchProducts()"  placeholder="Введите название">
+            </div>
+        </div>
+
+        <div class="search_result">
+            <spinner-component [spinnerShow]="showLoader">
+                <div class="spinner-2"></div>
+            </spinner-component>
+            <div class="search_result-list" *ngIf="products.length">
+                <div class="search_result-item" (click)="onSelectProduct(product)" *ngFor="let product of products">
+                    <div class="search_result-descr">
+                        <div class="search_result-photo">
+                            <img src={{product.picture[0]}} alt={{product.name}} />
+                        </div>
+                        <div class="search_result-title">{{product.name}}</div>
+                    </div>
+                    <div class="search_result-price">{{product.price}} руб.</div>
+                </div>
+                <button class="search_result-btn" *ngIf="!isLast" (click)="loadMoreProducts()">Загрузить еще</button>
+            </div>
+        </div>
+        <div *ngIf="emptySearch" class="search_result">Ничего не найдено</div>
+    </div>
+</div>

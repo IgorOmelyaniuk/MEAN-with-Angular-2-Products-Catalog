@@ -1,0 +1,20 @@
+<div class="products_wrap">
+    <spinner-component [spinnerShow]="showLoader">
+            <div class="spinner-2"></div>
+        </spinner-component>
+    <div class="products_sort">
+        <span class="products_sort-title">Сортировать:</span>
+        <button class="btn btn-round products_sort-btn" [class.isActive]="typeSorting === 'up'" (click)="sortPriceUp()">По возрастанию</button>
+        <button class="btn btn-round products_sort-btn" [class.isActive]="typeSorting === 'down'" (click)="sortPriceDown()">По убыванию</button>
+    </div>
+    <div class="products_list wrap-flex">
+        <div *ngFor="let product of products | paginate: { itemsPerPage: 15, currentPage: page || curPage }"  class="product_item" (click)="onSelectProduct(product, page)">
+            <div class="product_item-img">
+                <img src={{product.picture[0]}} alt={{product.name}}/>
+            </div>
+            <div class="product_item-descr">{{product.name}}</div>
+            <div class="product_item-price">{{product.price}} руб</div>
+        </div>
+    </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

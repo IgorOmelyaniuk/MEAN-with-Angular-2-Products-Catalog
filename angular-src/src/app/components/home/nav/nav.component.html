@@ -1,0 +1,15 @@
+<nav>
+    <h2>Выберите раздел товаров:</h2>
+    <div class="nav_wrap">
+        <div class="container">
+            <ul class="wrap-flex">
+                <li class="nav_item" [class.isActive]='section === selectedSection' *ngFor="let section of sections" (click)="onSelectSection(section)">
+                    <div class="nav_item-img">
+                        <img src={{section.photo}} alt={{section.title}}/>
+                    </div>
+                    <div class="nav_item-title">{{section.title}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

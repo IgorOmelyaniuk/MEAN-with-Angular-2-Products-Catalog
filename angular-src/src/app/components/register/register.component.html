@@ -1,0 +1,41 @@
+<div class="wrap-flex">
+    <div class="form_wrap">
+        <div class="form_title">Регистрация</div>
+        <form #regForm="ngForm" (submit)="onRegisterSubmit(regForm.value)">
+            <div class="form_input">
+                <input type="text" #usernameRef="ngModel" minlength="4" name="username" placeholder="Логин..." required ngModel autofocus>
+                <div *ngIf="usernameRef.errors && (usernameRef.dirty || usernameRef.touched)" class="error-message">
+                    <div [hidden]="!usernameRef.errors.required">
+                        Введите логин
+                    </div>
+                    <div [hidden]="!usernameRef.errors.minlength">
+                        Логин должен состоять минимум из 4 символов
+                    </div>
+                </div>
+            </div>
+            <div class="form_input">
+                <input type="password" #passwordRef="ngModel" minlength="6" name="password" placeholder="Пароль..." required ngModel>
+                <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" class="error-message">
+                    <div [hidden]="!passwordRef.errors.required">
+                        Введите пароль
+                    </div>
+                    <div [hidden]="!passwordRef.errors.minlength">
+                        Пароль должен состоять минимум из 6 символов
+                    </div>
+                </div>
+            </div>
+            <div class="form_input">
+                 <input type="text" #emailRef="ngModel" name="email" placeholder="Email..." required [(ngModel)]="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                 <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" class="error-message">
+                    <div [hidden]="!emailRef.errors.required">
+                        Введите почту
+                    </div>
+                    <div [hidden]="!emailRef.errors.pattern">
+                        Неверно указан адрес электронной почты
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="regForm.invalid" class="btn-submit" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>

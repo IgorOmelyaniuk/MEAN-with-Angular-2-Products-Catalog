@@ -1,0 +1,47 @@
+<div class="nav_filter" (click)="toggleFilter()">
+    <ul class="nav_filter-list">
+        <li class="nav_filter-item"></li>
+        <li class="nav_filter-item"></li>
+        <li class="nav_filter-item"></li>
+    </ul>
+    <div class="nav_filter-title" *ngIf="!openedFilter">Показать фильтр</div>
+    <div class="nav_filter-title" *ngIf="openedFilter">Скрыть фильтр</div>
+</div>
+<div class="category_title">{{filter.title}}</div>
+
+<form #filterForm="ngForm" novalidate method="post" [class.opened]='openedFilter'>
+    <div class="form_group">
+        <div class="form_group-title">Производитель</div>
+        <ul>
+            <li class="form_item" [class.active]="brand.checked" *ngFor="let brand of filter.brands" (click)="handleBrandCheckBox($event)">
+                <input type="checkbox" [checked]="brand.checked" [value]="brand.name" name="brand">
+                {{brand.name}}
+            </li>
+        </ul>
+    </div>
+
+   <div class="form_group">
+        <div class="form_group-title">Цена</div>
+        <div class="form_range">
+            <label>От</label>
+            <input class="form_input" type="text" name="minPrice" (keyup)="handlePriceInput($event)" [ngModel]="filter.minPrice">    
+        </div>
+        <div class="form_range">
+            <label>До</label>
+            <input class="form_input" type="text" name="maxPrice" (keyup)="handlePriceInput($event)" [ngModel]="filter.maxPrice" >    
+        </div>
+   </div>
+
+    <div class="form_group" *ngFor="let item of filter.params" >
+        <div [ngSwitch]="item.type">
+            <app-checkbox
+                *ngSwitchCase="'checkbox'" (onChanged)="handleParamCheckBox($event)" [item]="item"
+            ></app-checkbox>
+            <app-range
+                *ngSwitchCase="'range'" (onChanged)="handleRangeInput($event)" [item]="item"
+            ></app-range>
+        </div>
+    </div>
+    
+</form>
+

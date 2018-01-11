@@ -1,0 +1,7 @@
+<div class="form_group-title">{{item.title}}</div>
+<ul>
+    <li class="form_item" [class.active]="value.checked" *ngFor="let value of item.values" (click)="changedCheckbox($event)">
+        <input type="checkbox"  [checked]="value.checked" [value]="value.name" attr.name="{{item.title}}">
+        {{value.name}}
+    </li>
+</ul>

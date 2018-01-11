@@ -1,0 +1,32 @@
+<header>
+    <div class="header_top">
+        <div class="container">
+            <div class="header_top-user wrap-flex" *ngIf="!authService.loggedIn()">
+                <button class="btn btn-round header_top-btn" routerLink="/login">Вход</button>
+                <button class="btn btn-round header_top-btn" routerLink="/register">Регистрация</button>
+            </div>
+            <div class="header_top-user wrap-flex" *ngIf="authService.loggedIn()">
+                <div class="header_top-name">Здравствуйте, {{currentUser.username}}</div>
+                <div class="header_top-btn" routerLink="/favorites">Избранное</div>
+                <div class="header_top-btn" (click)="onLogoutClick()">Выйти</div>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="container wrap-flex">
+            <div class="header_logo">
+                <h1 routerLink="">
+                    Каталог <span>товаров</span>
+                </h1>
+            </div>
+            <div class="header_phone">
+                <div class="header_phone-text">Телефон:</div>
+                <a class="header_phone-link" href="+375297380222">+375 29 738-02-22</a>
+            </div>
+            <div class="header_search" routerLink="/searching">
+                <span class="header_search-title">Перейти к поиску</span>
+                <span class="header_search-icon"></span>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,141 @@
+.category_title {
+	line-height: 65px;
+	text-align: center;
+	position: relative;
+	font-size: 22px;
+	font-weight: bold;
+	background: #395561;
+	background: none;
+}
+
+form {
+	font-size: 18px;
+}
+
+.nav_filter {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background: #2bb9cd;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+.nav_filter-list {
+	width: 30px;
+	margin-right: 20px;
+}
+
+.nav_filter-item {
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.nav_filter-item:last-child {
+	margin-bottom: 0;
+}
+
+.nav_filter:hover {
+	color: #000;
+}
+
+.nav_filter:hover .nav_filter-item {
+	background: #000;
+}
+
+.form_group {
+	margin-bottom: 20px;
+}
+
+.form_group-title {
+	font-weight: bold;
+	font-size: 19px;
+	margin-bottom: 10px;
+}
+
+.form_item {
+	cursor: pointer;
+	margin-bottom: 10px;
+	position: relative;
+	padding-left: 40px;
+	line-height: 22px;
+	color: #848484;
+}
+
+.form_item::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #2bb9cd;
+	border-radius: 5px;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.form_item.active::before {
+	background-image: url('assets/img/check-icon.png');
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+}
+
+.form_item:hover,
+.form_item.active {
+	color: #000;
+}
+
+.form_range {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	line-height: 40px;
+}
+
+.form_input {
+	display: inline-block;
+	vertical-align: top;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #2bb9cd;
+	border-radius: 5px;
+	width: 70px;
+	text-align: center;
+	font-size: 16px;
+}
+
+@media screen and (max-width: 900px) {
+	.category_title {
+		text-align: center;
+	}
+	.nav_filter {
+		display: flex;
+	}
+	form {
+		display: none;
+	}
+	.opened {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.form_group-title {
+		font-size: 17px;
+	}
+	.form_item {
+		font-size: 16px;
+	}
+} 
+

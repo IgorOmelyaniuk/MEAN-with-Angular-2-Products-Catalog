@@ -1,0 +1,23 @@
+.products-filter {
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
+	max-width: 310px;
+	width: 25%;
+	padding: 0;
+}
+
+.products-list {
+	width: 70%;
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+	.products-filter,
+	.products-list {
+		max-width: 100%;
+		width: 100%;
+	}
+}

@@ -1,0 +1,19 @@
+<div *ngIf="!reviews.length">
+    <div class="reviews_empty">Для данного товара отзывов нет</div>
+</div>
+<div class="reviews_message" *ngIf="!authService.loggedIn()">*Оставлять отзывы могуть только авторизированные пользователи</div>
+<div *ngIf="reviews.length">
+    <div class="reviews_list">
+        <div class="reviews_item" *ngFor="let review of reviews">
+            <div class="review">
+                <div class="review_date">{{review.date | date:'medium'}}</div>
+                <div class="review_name">Пользователь: {{review.user}}</div>
+                <div class="review_text">{{review.text}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="add_review" *ngIf="authService.loggedIn()">
+    <textarea name="text" [(ngModel)]="text" required></textarea>
+    <button (click)="addReview()" class="btn btn-round btn-active">Добавить отзыв</button>
+</div>

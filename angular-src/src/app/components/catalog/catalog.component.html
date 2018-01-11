@@ -1,0 +1,6 @@
+<div class="catalog_page">
+    <div class="container wrap-flex">
+        <app-filter [filter]="filter" (changedFilter)="onChangedFilter($event)" class="products-filter"></app-filter>
+        <app-list [category]="category" [showLoader]="showLoader" (priceDown)="onPriceDown()" (priceUp)="onPriceUp()" [products]="products" class="products-list"></app-list>
+    </div>
+</div>

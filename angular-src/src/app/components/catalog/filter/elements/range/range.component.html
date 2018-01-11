@@ -1,0 +1,11 @@
+<div class="form_group-title">{{item.title}}</div>
+<div class="form_range">
+    <label>От</label>
+    <input class="form_input" type="text" attr.name="{{item.title}}" [ngModel]="item.minValue" (keyup)="changedInput($event)" placeholder="item.minValue">
+</div>
+<div class="form_range">
+    <label>До</label>
+    <input class="form_input" type="text" attr.name="{{item.title}}" [ngModel]="item.maxValue" (keyup)="changedInput($event)" placeholder="item.maxValue">
+</div>
+
+

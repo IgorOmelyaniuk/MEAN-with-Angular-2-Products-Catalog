@@ -1,0 +1,56 @@
+<div class="product_wrap">
+    <div class="container">
+        <p class="breadcrumbs" (click)="goBack()"><Все товары этой категории</p>
+        <div class="product_card">
+            <div class="wrap-flex">
+                <div class="product_card-left">
+                    <div class="product_card-img">
+                        <img src={{product.picture[0]}} alt={{product.name}} />
+                    </div>
+                </div>
+                <div class="product_card-descr">
+                    <div class="product_card-title">{{product.name}}</div>
+                    <div class="product_card-price">Цена: <span>{{product.price}} руб</span></div>
+                    <button *ngIf="authService.loggedIn()" class="btn btn-round btn-active" (click)="addFavorite(product)">
+                        Добавить в Избранное
+                    </button> 
+                    <button *ngIf="!authService.loggedIn()" class="btn btn-round btn-disable" data-title="Добавлять в Избранное могут только авторизированные пользователи">
+                        Добавить в Избранное
+                    </button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="product_about">
+            <div class="product_about-tabs">
+                <div class="product_about-list">
+                    <div class="product_about-item" [class.active]="selectedTab === 'description'" (click)="toggleTab('description')">Описание</div>
+                    <div class="product_about-item" [class.active]="selectedTab === 'params'" (click)="toggleTab('params')">Характеристики</div>
+                    <div class="product_about-item" [class.active]="selectedTab === 'gallery'" (click)="toggleTab('gallery')">Фото({{product.picture.length}})</div>
+                    <div class="product_about-item" [class.active]="selectedTab === 'reviews'" (click)="toggleTab('reviews')">Отзывы({{reviews.length}})</div>
+                </div>
+            </div>
+            <div class="product_about-tab" [class.isActive]="selectedTab === 'description'">
+                 <div class="product_about-text">{{product.description}}</div>
+            </div>
+            <div class="product_about-tab" [class.isActive]="selectedTab === 'params'">
+                <table class="table_params">
+                    <tr *ngFor="let item of product.param">
+                        <td class="table_params-name">{{item._name}}<span *ngIf="item._unit">, {{item._unit}}</span></td>
+                        <td class="table_params-value">{{item.__text}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="product_about-tab" [class.isActive]="selectedTab === 'gallery'">
+                <ul class="product_gallery">
+                    <li class="product_gallery-item" *ngFor="let item of product.picture">
+                        <img src={{item}} alt={{product.name}}/>
+                    </li>
+                </ul>
+            </div>
+            <div class="product_about-tab" [class.isActive]="selectedTab === 'reviews'">
+                <app-review [reviews]="reviews" (reviewSubmit)="onReviewSubmit($event)"></app-review>
+            </div>
+        </div>
+    </div>
+</div>

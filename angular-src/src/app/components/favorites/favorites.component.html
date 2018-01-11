@@ -1,0 +1,23 @@
+<div class="favorites_wrap">
+    <h2>Избранное</h2>
+    <div class="container">
+        <div class="products_list" *ngIf="products.length">
+                <div class="product_item" *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p }">
+                    <div class="wrap-flex" (click)="onSelectProduct(product)">
+                        <div class="product_item-img">
+                            <img src={{product.picture[0]}} alt={{product.name}}/>
+                        </div>
+                        <div class="product_item-descr">
+                            <div class="product_item-title">{{product.name}}</div>
+                            <div class="product_item-price">{{product.price}} руб</div>
+                            <div class="product_item-text">{{product.description}}</div>
+                        </div>
+                    </div>
+                    <div class="product_item-delete" (click)="removeFavorite(product)"></div>
+                </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+        <div class="products_list-empty" *ngIf="!products.length">Ваш список избранных товаров пуст...</div>
+    </div>
+</div>
+

@@ -1,0 +1,136 @@
+.product_item {
+	margin-bottom: 30px;
+	cursor: pointer;
+	padding: 30px 80px 30px 40px;
+	position: relative;
+	transition: all .5s ease-out;
+	background: #fff;
+}
+
+.product_item:hover {
+	box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42),
+				0 3px 20px 0px rgba(0, 0, 0, 0.12),
+				0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.wrap-flex {
+	align-items: center;
+}
+
+.product_item-img {
+	width: 25%;
+	height: 160px;
+	position: relative;
+}
+
+.product_item-img img {
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product_item-descr {
+	width: 70%;
+	color: #000;
+}
+
+.product_item-title {
+	font-weight: bold;
+	font-size: 27px;
+	margin-bottom: 20px;
+}
+
+.product_item-price {
+	font-weight: bold;
+	font-size: 24px;
+	color: #97b9cf;
+	margin-bottom: 20px;
+}
+
+.product_item-text {
+	font-size: 18px;
+	max-height: 110px;
+	overflow: hidden;
+	text-align: justify;
+}
+
+.product_item-delete {
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	width: 40px;
+	height: 40px;
+	background: url('assets/img/basket.png') no-repeat;
+	background-size: cover;
+	opacity: 0.4;
+	z-index: 3;
+	transform: translateY(-50%);
+}
+
+.product_item-delete:hover {
+	opacity: 1;
+}
+
+.products_list-empty {
+	width: 100%;
+	font-size: 24px;
+	color: #999;
+	text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+	.product_item {
+		padding: 20px 70px 20px 20px;
+	}
+	.product_item-img {
+		width: 20%;
+		height: 120px;
+	}
+	.product_item-descr {
+		width: 75%;
+	}
+	.product_item-title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	.product_item-price {
+		font-size: 21px; 
+		margin-bottom: 10px;
+	}
+	.product_item-text {
+		font-size: 16px;
+		max-height: 80px;
+	}
+	.product_item-delete {
+		right: 20px;
+		left: auto;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.wrap-flex {
+		display: block;
+	}
+	.product_item {
+		padding: 30px;
+	}
+	.product_item-img,
+	.product_item-descr {
+		margin-bottom: 15px;
+		width: 100%;
+		text-align: center;
+	}
+	.product_item-text {
+		display: none;
+	}
+	.product_item-title {
+		font-size: 21px;
+	}
+	.product_item-delete {
+		position: static;
+		margin: 0 auto;
+		transform: none;
+	}
+}

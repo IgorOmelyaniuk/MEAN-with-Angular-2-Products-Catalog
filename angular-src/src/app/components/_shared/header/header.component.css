@@ -1,0 +1,166 @@
+header {
+	position: relative;
+}
+
+.wrap-flex {
+	height: 100%;
+	align-items: center;
+}
+
+.header_top {
+	padding: 10px 0;
+	background: #2bb9cd;
+}
+
+.header_top .wrap-flex {
+	justify-content: flex-end;
+}
+
+.header_top-btn {
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 40px;
+}
+
+.header_top-btn:last-child {
+	margin-right: 0;
+}
+
+.header_top-btn:hover {
+	color: #000;
+}
+
+.header_top-name {
+	line-height: 36px;
+	margin-right: 25px;
+	color: #fff;
+}
+
+.header_bottom {
+	padding: 45px 0;
+	background: #fff;
+}
+
+.header_logo span {
+	color: #000;
+}
+
+.header_search {
+	background: #2bb9cd;
+	padding: 0 20px;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.header_search:hover {
+	box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42),
+        0 3px 20px 0px rgba(0, 0, 0, 0.12),
+        0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.header_search-title {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+.header_search-icon {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.header_search-icon::before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	background: url('assets/img/musica-searcher.svg');
+	background-size: cover;
+}
+
+.header_phone {
+	position: relative;
+}
+
+.header_phone-text {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.header_phone-link {
+	color: #000;
+	font-weight: bold;
+	font-size: 21px;
+}
+
+.header_phone::before {
+	content: '';
+	display:  block;
+	position: absolute;
+	top: 15px;
+	left: -40px;
+	background: url('assets/img/phone-icon.png') center no-repeat;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+}
+
+@media screen and (max-width: 1100px) {
+    .header_phone-text {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+	.header_bottom {
+		padding: 25px 0;
+	}
+    .header_bottom .wrap-flex {
+        display: block;
+        text-align: center;
+    }
+	.header_phone {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	.header_search {
+		width: 225px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.header_top .wrap-flex {
+		display: block;
+		text-align: center;
+	}
+	.header_top-name {
+		line-height: 20px;
+	}
+	.header_top-btn,
+	.header_top-name {
+		margin: 0 auto 20px auto;
+	}
+	.header_top-btn:last-child  {
+		margin: 0 auto;
+	}
+	.header_logo {
+		margin-bottom: 10px;
+	}
+	.header_search {
+		padding: 0 5px;
+	}
+}

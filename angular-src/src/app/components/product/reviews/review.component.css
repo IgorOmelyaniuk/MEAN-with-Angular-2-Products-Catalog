@@ -1,0 +1,101 @@
+.reviews_empty {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.reviews_message {
+    font-size: 21px;
+    color: #848484;
+    margin-bottom: 15px;
+}
+
+.reviews_list {
+    margin-bottom: 25px;
+}
+
+.reviews_item {
+    margin-bottom: 25px;
+}
+
+.review {
+    padding: 20px;
+    background: #fff;
+    color: #000;
+}
+
+.review_name {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.review_text {
+    font-size: 19px;
+}
+
+.add_review {
+    width: 800px;
+}
+
+.add_review textarea {
+    resize: none;
+    width: 100%;
+    height: 120px;
+    padding: 10px 20px;
+    border: 1px solid #dedede;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.btn {
+    width: 220px;
+    line-height: 40px;
+    font-size: 17px;
+    position: relative;
+}
+
+.btn-active {
+    background: #2bb9cd;
+    color: #fff;
+}
+
+.btn-active:hover {
+   box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42),
+        0 3px 20px 0px rgba(0, 0, 0, 0.12),
+        0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 900px) {
+    .add_review {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .reviews_empty {
+        font-size: 21px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .reviews_message {
+        font-size: 17px;
+        text-align: center;
+    }
+    .review_name {
+        font-size: 19px;
+    }
+    .review_text {
+        font-size: 16px;
+    }
+    .btn {
+        font-size: 16px;
+        line-height: 36px;
+        width: 180px;
+        margin: 0 auto;
+    }
+    .add_review textarea {
+        height: 200px;
+    }
+}
